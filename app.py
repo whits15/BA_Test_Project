@@ -20,7 +20,7 @@ load_dotenv()
 app = Flask(__name__)
 
 
-client = OpenAI(api_key="sk-proj-lZXUXZX4v4JOOjmc3Vx4T3BlbkFJXpqHCnQRoe24rlOJwGGV")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 
 def get_stock_data(ticker):
@@ -83,7 +83,7 @@ def analyze_stock(df, ticker):
         recent_data = df.tail(5).to_dict(orient='records')
         prompt = f"Analyze the recent performance and provide recommendations for the stock {ticker} based on the following data and output your response in at most 150 words with recommendation of buy, sell, or hold:\n{recent_data}"
 
-        response = client.chat.completions.create(
+        response = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a stock market analyst."},
