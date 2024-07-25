@@ -8,7 +8,7 @@ from flask import Flask, render_template, request, send_file
 import plotly.express as px
 import plotly.graph_objects as go
 from dotenv import load_dotenv
-from openai import OpenAI
+import openai
 
 #TODO make chat gpt function async NOTE: probably not doing this
 
