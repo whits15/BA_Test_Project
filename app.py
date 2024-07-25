@@ -20,7 +20,7 @@ load_dotenv()
 app = Flask(__name__)
 
 
-client = OpenAI(api_key="sk-proj-8Wbpkaq0SCak9s0pi4YxT3BlbkFJjN6KEZ2e2JnZF2LHSMiC")
+client = OpenAI(api_key="sk-proj-lZXUXZX4v4JOOjmc3Vx4T3BlbkFJXpqHCnQRoe24rlOJwGGV")
 
 
 def get_stock_data(ticker):
