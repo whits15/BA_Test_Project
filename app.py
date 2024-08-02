@@ -83,7 +83,8 @@ def analyze_stock(df, ticker):
         recent_data = df.tail(5).to_dict(orient='records')
         prompt = f"Analyze the recent performance and provide recommendations for the stock {ticker} based on the following data and output your response in at most 150 words with recommendation of buy, sell, or hold:\n{recent_data}"
 
-        response = openai.chat.completions.create(
+       # response = openai.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a stock market analyst."},
