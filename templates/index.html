@@ -36,10 +36,11 @@
             <div class="plot-chart-new">{{ candlestick_chart|safe }}</div>
             <div class="plot">{{ volume_chart|safe }}</div>
         </div>
-        <div>
+      <!--  <div>
             <input type="checkbox" id="toggleStockData" onclick="toggleStockData()">
             <label for="toggleStockData">Show Stock Data</label>
         </div>
+        -->
         <div id="stockDataSection" class="stock-data" style="display: none;">
             <h2>{{ selected_ticker }} Stock Data</h2>
             {% if stock_data %}
